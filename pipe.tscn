@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcphwlum4vlgw"]
+
+[ext_resource type="Script" path="res://pipe.gd" id="1_aklph"]
+[ext_resource type="Texture2D" uid="uid://bcjefivyctk7l" path="res://monochrome_packed.png" id="1_uanoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lox7"]
+size = Vector2(20, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkij3"]
+size = Vector2(16, 96)
+
+[node name="Pipe" type="AnimatableBody2D"]
+z_index = -1
+script = ExtResource("1_aklph")
+
+[node name="Bot" type="Node2D" parent="."]
+position = Vector2(0, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bot"]
+position = Vector2(0, -16)
+texture = ExtResource("1_uanoc")
+region_enabled = true
+region_rect = Rect2(144, 256, 16, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Bot"]
+position = Vector2(0, 16)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Bot"]
+position = Vector2(0, 32)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Bot"]
+position = Vector2(0, 48)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Bot"]
+position = Vector2(0, 64)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Bot"]
+position = Vector2(0, 80)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Bot"]
+position = Vector2(0, 96)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Top" type="Node2D" parent="."]
+position = Vector2(0, -64)
+rotation = -3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="Top"]
+position = Vector2(0, -16)
+texture = ExtResource("1_uanoc")
+region_enabled = true
+region_rect = Rect2(144, 256, 16, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Top"]
+position = Vector2(0, 16)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Top"]
+position = Vector2(0, 32)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Top"]
+position = Vector2(0, 48)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Top"]
+position = Vector2(0, 64)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Top"]
+position = Vector2(0, 80)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Top"]
+position = Vector2(0, 96)
+texture = ExtResource("1_uanoc")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(144, 272, 16, 16)
+
+[node name="BotCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 96)
+shape = SubResource("RectangleShape2D_4lox7")
+debug_color = Color(0, 0.635294, 0.415686, 0.419608)
+
+[node name="TopCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -96)
+shape = SubResource("RectangleShape2D_4lox7")
+debug_color = Color(0, 0.643137, 0.317647, 0.419608)
+
+[node name="ScoredArea" type="Area2D" parent="."]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoredArea"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_wkij3")

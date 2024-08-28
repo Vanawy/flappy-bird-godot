@@ -1,0 +1,239 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqn6q16nc362"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6xmo5"]
+[ext_resource type="Script" path="res://Bird.gd" id="1_hgyd3"]
+[ext_resource type="SpriteFrames" uid="uid://3s1uk4ip0qvy" path="res://bird_sprite_frames.tres" id="1_sv4bk"]
+[ext_resource type="Texture2D" uid="uid://bcjefivyctk7l" path="res://monochrome_packed.png" id="2_2d4if"]
+[ext_resource type="FontFile" uid="uid://c4d51ps64ca1i" path="res://Kenney Pixel Square.ttf" id="5_vs5lg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4opqv"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce0ug"]
+size = Vector2(128, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cuuyv"]
+font = ExtResource("5_vs5lg")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_6xmo5")
+
+[node name="PipeLimits" type="Node2D" parent="."]
+
+[node name="BottomLimit" type="Marker2D" parent="PipeLimits"]
+position = Vector2(96, 32)
+gizmo_extents = 64.0
+
+[node name="TopLimit" type="Marker2D" parent="PipeLimits"]
+position = Vector2(96, -64)
+gizmo_extents = 64.0
+
+[node name="LeftLimit" type="Marker2D" parent="PipeLimits"]
+position = Vector2(-64, 0)
+gizmo_extents = 64.0
+
+[node name="RightLimit" type="Marker2D" parent="PipeLimits"]
+position = Vector2(128, 0)
+gizmo_extents = 64.0
+
+[node name="Bird" type="CharacterBody2D" parent="."]
+collision_layer = 3
+script = ExtResource("1_hgyd3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
+position = Vector2(0, -2)
+sprite_frames = ExtResource("1_sv4bk")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_4opqv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(24, 0)
+zoom = Vector2(2, 2)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(30, 118)
+
+[node name="Bot" type="Node2D" parent="Floor"]
+position = Vector2(-6, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(-56, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(-40, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(-24, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(-8, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(8, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(24, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(40, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Floor/Bot"]
+position = Vector2(56, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Bot2" type="Node2D" parent="Floor"]
+position = Vector2(-6, -6)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(-56, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(-40, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(-24, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(-8, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(8, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(24, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(40, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Floor/Bot2"]
+position = Vector2(56, 0)
+rotation = 1.5708
+texture = ExtResource("2_2d4if")
+offset = Vector2(-8, 0)
+region_enabled = true
+region_rect = Rect2(160, 272, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-6, -6)
+shape = SubResource("RectangleShape2D_ce0ug")
+
+[node name="StartLabel" type="Label" parent="."]
+offset_left = -37.0
+offset_top = -64.0
+offset_right = 88.0
+offset_bottom = -13.0
+text = "Press space 
+to start"
+label_settings = SubResource("LabelSettings_cuuyv")
+horizontal_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = -37.0
+offset_top = -118.0
+offset_right = 89.0
+offset_bottom = -13.0
+text = "Game Over
+
+Press space
+to try again"
+label_settings = SubResource("LabelSettings_cuuyv")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+offset_left = -37.0
+offset_top = -91.0
+offset_right = 88.0
+offset_bottom = -40.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_cuuyv")
+horizontal_alignment = 1
+
+[node name="BestScore" type="Label" parent="."]
+offset_left = -37.0
+offset_top = 98.0
+offset_right = 88.0
+offset_bottom = 149.0
+text = "PB: 0
+"
+label_settings = SubResource("LabelSettings_cuuyv")
+horizontal_alignment = 1
